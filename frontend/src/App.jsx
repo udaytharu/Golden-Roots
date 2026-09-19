@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { CartProvider } from './context/CartContext';
+import { CatalogProvider } from './context/CatalogContext';
 import { ToastProvider } from './context/ToastContext';
 import Layout from './components/layout/Layout';
 import Home from './pages/Home';
@@ -14,8 +15,9 @@ import TermsOfService from './pages/TermsOfService';
 export default function App() {
   return (
     <BrowserRouter>
-      <CartProvider>
-        <ToastProvider>
+      <CatalogProvider>
+        <CartProvider>
+          <ToastProvider>
           <Routes>
             <Route path="/admin" element={<Admin />} />
             <Route element={<Layout />}>
@@ -28,8 +30,9 @@ export default function App() {
               <Route path="/terms-of-service" element={<TermsOfService />} />
             </Route>
           </Routes>
-        </ToastProvider>
-      </CartProvider>
+          </ToastProvider>
+        </CartProvider>
+      </CatalogProvider>
     </BrowserRouter>
   );
 }

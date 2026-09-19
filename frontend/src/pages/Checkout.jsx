@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, Navigate } from 'react-router-dom';
 import { formatPrice } from '../data/products';
+import { apiRequest } from '../api';
 import { useCart } from '../context/CartContext';
 import { useToast } from '../context/ToastContext';
 import PageHero from '../components/ui/PageHero';
@@ -86,9 +87,8 @@ export default function Checkout() {
     setSubmitting(true);
 
     try {
-      const response = await fetch('/api/orders', {
+      const result = await apiRequest('/orders', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           customer: form,
           payment: form.payment,
@@ -97,14 +97,6 @@ export default function Checkout() {
           items: cartItems.map(({ id, qty }) => ({ id, qty })),
         }),
       });
-      const responseText = await response.text();
-      let result;
-      try {
-        result = JSON.parse(responseText);
-      } catch {
-        throw new Error('The API returned an invalid response. Start the backend server and use the Vite app URL.');
-      }
-      if (!response.ok) throw new Error(result.error || 'Unable to place order');
 
       setOrderId(result.order.id);
       clearCart();

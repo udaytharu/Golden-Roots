@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { SITE } from '../data/constants';
-import { FEATURED_PRODUCT_IDS, getProductById } from '../data/products';
+import { FEATURED_PRODUCT_IDS } from '../data/products';
+import { useCatalog } from '../context/CatalogContext';
 import FloatingSpices from '../components/ui/FloatingSpices';
 import ProductCard from '../components/products/ProductCard';
 import Button from '../components/ui/Button';
@@ -24,6 +25,7 @@ const CONTACT_CARDS = [
 ];
 
 export default function Home() {
+  const { getProductById } = useCatalog();
   const featured = FEATURED_PRODUCT_IDS.map(getProductById).filter(Boolean);
   const [formSent, setFormSent] = useState(false);
   const [form, setForm] = useState({

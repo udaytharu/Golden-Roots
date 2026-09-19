@@ -12,7 +12,8 @@ import {
   getValidSavedPromo,
   promoPercent,
 } from '../data/promoCodes';
-import { getProductById } from '../data/products';
+import { apiRequest } from '../api';
+import { useCatalog } from './CatalogContext';
 
 const CartContext = createContext(null);
 
@@ -34,6 +35,7 @@ function readPromo() {
 }
 
 export function CartProvider({ children }) {
+  const { getProductById } = useCatalog();
   const [cart, setCart] = useState(readCart);
   const [appliedPromo, setAppliedPromo] = useState(readPromo);
 
@@ -106,19 +108,10 @@ export function CartProvider({ children }) {
       if (!trimmed) return { ok: false, message: 'Please enter a promo code' };
 
       try {
-        const response = await fetch('/api/promos/validate', {
+        const promo = await apiRequest('/promos/validate', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ code: trimmed }),
         });
-        const responseText = await response.text();
-        let promo;
-        try {
-          promo = JSON.parse(responseText);
-        } catch {
-          return { ok: false, message: 'The API returned an invalid response. Start the backend server and use the Vite app URL.' };
-        }
-        if (!response.ok) return { ok: false, message: promo.error || 'Invalid promo code' };
 
         if (appliedPromo?.code === promo.code) return { ok: true, message: `Promo already applied (${promo.label})` };
 
@@ -145,7 +138,7 @@ export function CartProvider({ children }) {
           return { ...item, product, lineTotal: product.price * item.qty };
         })
         .filter(Boolean),
-    [cart]
+    [cart, getProductById]
   );
 
   const itemCount = useMemo(

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react';
-import { PRODUCTS } from '../data/products';
+import { useCatalog } from '../context/CatalogContext';
 import PageHero from '../components/ui/PageHero';
 import ProductCard from '../components/products/ProductCard';
 import ProductModal from '../components/products/ProductModal';
@@ -17,10 +17,11 @@ export default function Products() {
   const [filter, setFilter] = useState('all');
   const [sort, setSort] = useState('default');
   const [selected, setSelected] = useState(null);
+  const { products } = useCatalog();
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
-    let list = PRODUCTS.filter((p) => {
+    let list = products.filter((p) => {
       if (filter === 'best') return p.category === 'best';
       if (filter === 'new') return p.category === 'new';
       if (filter === 'under400') return p.price < 400;
@@ -55,13 +56,13 @@ export default function Products() {
         break;
     }
     return sorted;
-  }, [query, filter, sort]);
+  }, [products, query, filter, sort]);
 
   const suggestions = useMemo(() => {
     const q = query.trim().toLowerCase();
     if (!q) return [];
-    return PRODUCTS.filter((p) => p.name.toLowerCase().includes(q)).slice(0, 5);
-  }, [query]);
+    return products.filter((p) => p.name.toLowerCase().includes(q)).slice(0, 5);
+  }, [products, query]);
 
   const clearAll = () => {
     setQuery('');

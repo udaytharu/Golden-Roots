@@ -22,6 +22,16 @@ npm start
 
 The frontend runs at `http://localhost:5173`; the backend runs at `http://localhost:4000`. Vite proxies `/api` requests to the backend.
 
+## Production API connection
+
+Set this environment variable in Vercel for the frontend project, then redeploy:
+
+```text
+VITE_API_URL=https://your-render-service.onrender.com
+```
+
+Do not add `/api` to the value. The frontend adds that path to requests automatically. In Render, set `FRONTEND_ORIGIN` to the exact Vercel deployment URL, for example `https://your-store.vercel.app`, then redeploy the backend.
+
 ## Frontend scripts
 
 | Command | Purpose |

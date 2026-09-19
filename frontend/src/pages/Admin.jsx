@@ -4,9 +4,9 @@ import {
   ADMIN_TOKEN_STORAGE_KEY,
   DEFAULT_ADMIN_TOKEN,
 } from "../data/admin";
+import { apiRequest } from "../api";
 import "../styles/pages/admin.css";
 
-const API = "/api";
 const STATUSES = [
   "pending",
   "confirmed",
@@ -66,25 +66,13 @@ export default function Admin() {
   const [confirmToken, setConfirmToken] = useState("");
 
   const request = async (path, options = {}) => {
-    const response = await fetch(`${API}${path}`, {
+    return apiRequest(path, {
       ...options,
       headers: {
-        "Content-Type": "application/json",
         "x-admin-token": token,
         ...(options.headers || {}),
       },
     });
-    const responseText = response.status === 204 ? '' : await response.text();
-    let body = null;
-    if (responseText) {
-      try {
-        body = JSON.parse(responseText);
-      } catch {
-        throw new Error('The API returned an invalid response. Start the backend server and use the Vite app URL.');
-      }
-    }
-    if (!response.ok) throw new Error(body?.error || "Request failed");
-    return body;
   };
   const load = async () => {
     try {
