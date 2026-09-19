@@ -1,0 +1,263 @@
+[
+  {
+    "id": "GR-83928B",
+    "status": "delivered",
+    "createdAt": "2026-09-10T12:07:13.690Z",
+    "customer": {
+      "firstName": "Uday",
+      "lastName": "Raj Chaudhary",
+      "email": "udaytharu813@gmail.com",
+      "phone": "9812534304",
+      "address": "Rajapur-05, Bardiya",
+      "city": "Rajapur",
+      "province": "Lumbini",
+      "postal": "",
+      "landmark": "",
+      "orderNotes": ""
+    },
+    "payment": "cod",
+    "items": [
+      {
+        "id": "turmeric",
+        "name": "Turmeric Powder",
+        "qty": 1,
+        "unitPrice": 280,
+        "lineTotal": 280
+      },
+      {
+        "id": "chili",
+        "name": "Chili Powder",
+        "qty": 3,
+        "unitPrice": 350,
+        "lineTotal": 1050
+      },
+      {
+        "id": "cumin",
+        "name": "Cumin Powder",
+        "qty": 1,
+        "unitPrice": 420,
+        "lineTotal": 420
+      },
+      {
+        "id": "mustard-oil",
+        "name": "Mustard Oil",
+        "qty": 1,
+        "unitPrice": 520,
+        "lineTotal": 520
+      }
+    ],
+    "promoCode": "GOLDEN10",
+    "subtotal": 2270,
+    "discount": 227,
+    "shipping": 150,
+    "tax": 266,
+    "total": 2459
+  },
+  {
+    "id": "GR-04B84C",
+    "status": "pending",
+    "createdAt": "2026-09-11T11:56:02.722Z",
+    "customer": {
+      "firstName": "Uday",
+      "lastName": "Raj Chaudhary",
+      "email": "udaytharu813@gmail.com",
+      "phone": "9812534304",
+      "address": "Rajapur-05, Bardiya",
+      "city": "Rajapur",
+      "province": "Koshi",
+      "postal": "",
+      "landmark": "",
+      "orderNotes": ""
+    },
+    "payment": "cod",
+    "items": [
+      {
+        "id": "turmeric",
+        "name": "Turmeric Powder",
+        "qty": 1,
+        "unitPrice": 280,
+        "lineTotal": 280
+      }
+    ],
+    "promoCode": null,
+    "subtotal": 280,
+    "discount": 0,
+    "shipping": 150,
+    "tax": 36,
+    "total": 466
+  },
+  {
+    "id": "GR-8ABEBF",
+    "status": "delivered",
+    "createdAt": "2026-09-12T13:56:31.962Z",
+    "customer": {
+      "firstName": "Bishnu",
+      "lastName": "Chaudhary",
+      "email": "gaurabc78@gmail.com",
+      "phone": "9866832902",
+      "address": "Nepalgunj -18, Banke",
+      "city": "Nepalgunj",
+      "province": "Bagmati",
+      "postal": "",
+      "landmark": "",
+      "orderNotes": ""
+    },
+    "payment": "esewa",
+    "items": [
+      {
+        "id": "turmeric",
+        "name": "Turmeric Powder",
+        "qty": 1,
+        "unitPrice": 280,
+        "lineTotal": 280
+      }
+    ],
+    "promoCode": null,
+    "subtotal": 280,
+    "discount": 0,
+    "shipping": 150,
+    "tax": 36,
+    "total": 466
+  },
+  {
+    "id": "GR-D2B2EF",
+    "status": "cancelled",
+    "createdAt": "2026-09-14T14:26:40.671Z",
+    "customer": {
+      "firstName": "Uday",
+      "lastName": "Raj Chaudhary",
+      "email": "udaytharu813@gmail.com",
+      "phone": "9812534304",
+      "address": "Rajapur-05, Bardiya",
+      "city": "Rajapur",
+      "province": "Gandaki",
+      "postal": "",
+      "landmark": "",
+      "orderNotes": ""
+    },
+    "payment": "khalti",
+    "items": [
+      {
+        "id": "chili",
+        "name": "Chili Powder",
+        "qty": 1,
+        "unitPrice": 350,
+        "lineTotal": 350
+      },
+      {
+        "id": "cumin",
+        "name": "Cumin Powder",
+        "qty": 1,
+        "unitPrice": 420,
+        "lineTotal": 420
+      }
+    ],
+    "promoCode": null,
+    "subtotal": 770,
+    "discount": 0,
+    "shipping": 150,
+    "tax": 100,
+    "total": 1020
+  },
+  {
+    "id": "GR-4CE485",
+    "status": "delivered",
+    "createdAt": "2026-09-14T14:38:49.956Z",
+    "customer": {
+      "firstName": "Uday",
+      "lastName": "Raj Chaudhary",
+      "email": "udaytharu813@gmail.com",
+      "phone": "9812534304",
+      "address": "Rajapur-05, Bardiya",
+      "city": "Rajapur",
+      "province": "Gandaki",
+      "postal": "",
+      "landmark": "",
+      "orderNotes": ""
+    },
+    "payment": "khalti",
+    "items": [
+      {
+        "id": "chili",
+        "name": "Chili Powder",
+        "qty": 3,
+        "unitPrice": 350,
+        "lineTotal": 1050
+      }
+    ],
+    "promoCode": "GOLDEN10",
+    "subtotal": 1050,
+    "discount": 105,
+    "shipping": 150,
+    "tax": 123,
+    "total": 1218
+  },
+  {
+    "id": "GR-977AB9",
+    "status": "cancelled",
+    "createdAt": "2026-09-14T15:15:28.473Z",
+    "customer": {
+      "firstName": "Siddhant",
+      "lastName": "Chaudhary",
+      "email": "siddhanttharu74@gmail.com",
+      "phone": "9800544574",
+      "address": "Rajapur-05, Bardiya",
+      "city": "Rajapur",
+      "province": "Karnali",
+      "postal": "",
+      "landmark": "",
+      "orderNotes": ""
+    },
+    "payment": "esewa",
+    "items": [
+      {
+        "id": "coriander",
+        "name": "Coriander Powder",
+        "qty": 1,
+        "unitPrice": 320,
+        "lineTotal": 320
+      }
+    ],
+    "promoCode": null,
+    "subtotal": 320,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 0,
+    "total": 320,
+    "paymentProof": "/api/payment-proofs/GR-977AB9.png"
+  },
+  {
+    "id": "GR-FEFD3E",
+    "status": "delivered",
+    "createdAt": "2026-09-14T15:16:36.243Z",
+    "customer": {
+      "firstName": "Sneha",
+      "lastName": "Chaudhary",
+      "email": "snehatharu813@gmail.com",
+      "phone": "9868595005",
+      "address": "Rajapur-05, Bardiya",
+      "city": "Rajapur",
+      "province": "Lumbini",
+      "postal": "",
+      "landmark": "",
+      "orderNotes": ""
+    },
+    "payment": "esewa",
+    "items": [
+      {
+        "id": "coriander",
+        "name": "Coriander Powder",
+        "qty": 1,
+        "unitPrice": 320,
+        "lineTotal": 320
+      }
+    ],
+    "promoCode": null,
+    "subtotal": 320,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 0,
+    "total": 320,
+    "paymentProof": "/api/payment-proofs/GR-FEFD3E.png"
+  }
+]
